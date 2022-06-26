@@ -1,8 +1,9 @@
 .movies {
     margin-right: 70%;
-    
+    margin-bottom:10%;
     display : grid;
     grid:  auto auto auto;
+
     
 }
 
@@ -11,9 +12,4 @@
    text-align: left;
     
     
-}
-
-.container{
-  
-  
 }

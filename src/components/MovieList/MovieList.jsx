@@ -37,7 +37,9 @@ function MovieList() {
                         );
                     })}
                 </section>
+
             </div>
+        
         </main >
 
     );
