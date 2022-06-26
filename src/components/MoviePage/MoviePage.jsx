@@ -16,6 +16,8 @@ function MovieForm() {
         e.preventDefault();
         console.log('in addToDb');
         console.log('current genres are',genres);
+        
+
     }
 
     return (
