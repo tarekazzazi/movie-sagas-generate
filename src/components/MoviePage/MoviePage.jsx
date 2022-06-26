@@ -3,15 +3,12 @@ import './MoviePage.css';
 import axios from 'axios';
 function MovieForm() {
     // building out axios all on MoviePage side before converting into sagas
-    axios.get('/genres')
+    
+  
 
-        .then((respose) => {
-            console.log(respose);
-        })
     function addToDb(e) {
         e.preventDefault();
         console.log('in addToDb');
-
     }
 
     return (
