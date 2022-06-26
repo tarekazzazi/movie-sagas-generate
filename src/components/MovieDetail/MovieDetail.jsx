@@ -14,6 +14,7 @@ function MovieDetail() {
 
             <img src={movies[id].poster} />
             <p>{movies[id].description}</p>
+            
             <Link to={'/'}>
                 <button>Go Back</button>
             </Link>
