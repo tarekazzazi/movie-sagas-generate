@@ -8,7 +8,7 @@ function MovieDetail() {
     const { id } = useParams();
     return (
         <>
-            <img src={movies[id]} />
+            <img src={movies[id].poster} />
         </>
     )
 
