@@ -1,4 +1,19 @@
 .movies {
-    display : flex;
-    flex-wrap: wrap;
+    margin-right: 70%;
+    
+    display : grid;
+    grid:  auto auto auto;
+    
+}
+
+.textbox{
+   position: absolute;
+   text-align: left;
+    
+    
+}
+
+.container{
+  
+  
 }

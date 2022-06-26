@@ -14,24 +14,30 @@ function MovieList() {
     return (
         <main>
             <h1>MovieList</h1>
-            <section className="movies">
-                {movies.map((movie, i) => {
-                    return (
+            <div clssname="container">
+                <section className="movies">
+                    {movies.map((movie, i) => {
+                        return (
 
-                        <div key={movie.id} >
-                            <h3>{movie.title}</h3>
-                            <Link to={`/movies/${i}`}>
-                                <img
-                                    src={movie.poster}
-                                    alt={movie.title}
-                                />
-                            </Link>
-                        </div>
+                            <div key={movie.id} >
+                                <div className='textbox'>
+                                    <h2>{movie.title}</h2>
+                                    <p>{movie.description}</p>
+                                </div>
+
+                                <Link to={`/movies/${i}`}>
+                                    <img
+                                        src={movie.poster}
+                                        alt={movie.title}
+                                    />
+                                </Link>
+                            </div>
 
 
-                    );
-                })}
-            </section>
+                        );
+                    })}
+                </section>
+            </div>
         </main >
 
     );
