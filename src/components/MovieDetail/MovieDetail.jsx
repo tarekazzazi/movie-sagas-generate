@@ -13,9 +13,8 @@ function MovieDetail() {
         <>
             <div className='container'>
                 <h3>{movies[id].title}</h3>
-                <div className='img'>
                     <img src={movies[id].poster} />
-                </div>
+                
 
                 <div className='textbox'>
 
