@@ -1,17 +1,29 @@
 import { Link } from 'react-router-dom';
 import './MoviePage.css';
+import axios from 'axios';
 function MovieForm() {
+    // building out axios all on MoviePage side before converting into sagas
+    axios.get('/genres')
+
+        .then((respose) => {
+            console.log(respose);
+        })
+    function addToDb(e) {
+        e.preventDefault();
+        console.log('in addToDb');
+
+    }
 
     return (
         <>
 
             <h2>Add a new movie here!</h2>
-            <form>
+            <form onSubmit={addToDb}>
                 <label htmlFor="text">Movie Title</label>
                 <input type="text" placeholder='Add movie title ' />
 
                 <label htmlFor="text">Movie Poster</label>
-                <input type="text" placeholder='Add a movie image '/>
+                <input type="text" placeholder='Add a movie image ' />
 
                 <select className='genres'>
                     <option value="Adventure">Adventure</option>
@@ -27,14 +39,14 @@ function MovieForm() {
                     <option value="ScienceFiction">Science Fiction</option>
                     <option value="SpaceOpera">Space-Opera</option>
                     <option value="Superhero">Superhero</option>
-
                 </select>
 
                 <textarea name="description" id="movieDescription" cols="30" rows="10" placeholder='Add description...'></textarea>
+
                 <Link to={'/'}>
                     <button>Cancel</button>
                 </Link>
-                <button>Save</button>
+                <input type="submit" value="Submit"></input>
             </form>
         </>
     )
