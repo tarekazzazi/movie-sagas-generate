@@ -16,6 +16,7 @@ function MovieList() {
             <h1>MovieList</h1>
             <div clssname="container">
                 <section className="movies">
+                    {/* take in every movie from movies and map with id */}
                     {movies.map((movie, i) => {
                         return (
                             <div key={movie.id} >
@@ -24,11 +25,12 @@ function MovieList() {
                                     <p>{movie.description}</p>
                                 </div> 
                                 <div className="card">
+                                    {/* on movie click go to that movies index and display image and title in detail view */}
                                     <Link to={`/movies/${i}`}>
-                                        <img
+                                         <img
                                             src={movie.poster}
                                             alt={movie.title}
-                                        />
+                                        /> 
                                     </Link>
                                 </div>
                             </div>
