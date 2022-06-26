@@ -19,16 +19,16 @@ function* rootSaga() {
 }
 
 function* fetchAllGenres() {
-    // get all movies from the DB
+    // get all genres from the DB
     try {
-        const movies = yield axios.get('/api/genre');
+        const genres = yield axios.get('/api/genre');
         console.log('get all:', genres.data);
         yield put({ type: 'SET_GENRES', payload: genres.data });
 
     } catch {
         console.log('get all error');
     }
-      
+}
 function* fetchAllMovies() {
     // get all movies from the DB
     try {

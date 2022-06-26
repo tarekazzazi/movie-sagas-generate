@@ -1,14 +1,21 @@
 import { Link } from 'react-router-dom';
 import './MoviePage.css';
-import axios from 'axios';
+import React,{ useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 function MovieForm() {
-    // building out axios all on MoviePage side before converting into sagas
-    
+   
+    const dispatch = useDispatch();
+    const genres = useSelector(store => store.genres);
+  
+    useEffect(() => {
+        dispatch({ type: 'FETCH_GENRES' });
+    }, []);
   
 
     function addToDb(e) {
         e.preventDefault();
         console.log('in addToDb');
+        console.log('current genres are',genres);
     }
 
     return (

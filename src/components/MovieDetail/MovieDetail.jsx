@@ -10,6 +10,7 @@ function MovieDetail() {
 
     console.log('In movie detail');
     // sets movie id to id
+    
     const { id } = useParams();
 
 
