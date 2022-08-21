@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool')
-
+// Gets a api/movie
+// returns a list of movies
 router.get('/', (req, res) => {
 
   const query = `SELECT * FROM movies ORDER BY "title" ASC`;
@@ -15,6 +16,39 @@ router.get('/', (req, res) => {
     })
 
 });
+// EDANS WAY
+//GET /api/movie/:id
+// return a single movie
+
+/*
+route.get(/:id , (re,res) => {
+  console.log(${req.params.id})
+  res.send('id')
+
+  const sqlQuery = `
+  SELECT * 
+  FROM movies
+  WHERE id = $1`;
+
+  const sqlParams = [req.params.id];
+
+  pool.query(sqlQuery,sqlParams)
+  .then((dbRes) => {
+    log(dbRes.rows[0]);
+    if (dbRes === 0 ){
+      res.sendStatus(404);
+      return;
+    }
+    res.send(dbRes.rows[0]);
+  })
+  .catch((err) => {
+    log (`uh oh there is a error ${err}`);
+  })
+}
+)
+
+*/
+
 
 router.post('/', (req, res) => {
   console.log(req.body);
