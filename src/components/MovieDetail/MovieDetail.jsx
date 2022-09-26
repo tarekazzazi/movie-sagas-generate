@@ -33,6 +33,7 @@ function MovieDetail() {
 
   console.log("is movies defined", movies);
   console.log("is movies defined", id);
+
   return (
     <>
       <div className="container">
@@ -40,15 +41,12 @@ function MovieDetail() {
         <h3>{movies[id]?.title}</h3>
         {/* For the movie clicked from movies array display that image src link  */}
         <img src={movies[id]?.poster} />
-
         {/* For the movie clicked from movies array display the description of the film  */}
         <p>{movies[id]?.description}</p>
         {/* added a link to the home page and a material ui button */}
-
         <Link to={"/"}>
           <Button variant="text">Go Back</Button>
         </Link>
-
         <Link to={`/editMovie/${id}`}>
           <Button variant="text">Edit</Button>
         </Link>

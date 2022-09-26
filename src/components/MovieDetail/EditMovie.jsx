@@ -2,10 +2,11 @@ import * as React from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Button from "@mui/material/Button";
 function EditMovie() {
   const dispatch = useDispatch();
+  const history = useHistory();
   // Grabs list of movies from store
   const movies = useSelector((store) => store.movies);
   const { id } = useParams();
@@ -31,6 +32,9 @@ function EditMovie() {
         newDescription,
       },
     });
+
+    history.push(`/movies/${id}`);
+    location.reload(true);
   };
 
   return (

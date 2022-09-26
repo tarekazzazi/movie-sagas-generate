@@ -63,7 +63,6 @@ router.put("/:id", (req, res) => {
   ];
   pool
     .query(updateMovie, updateMovieParams)
-
     .then((result) => {
       res.send(result.rows);
     })
