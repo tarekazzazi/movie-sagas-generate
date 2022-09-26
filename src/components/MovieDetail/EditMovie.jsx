@@ -46,13 +46,19 @@ function EditMovie() {
           defaultValue={MovieTitle}
           onChange={(e) => setNewTitle(e.target.value)}
         />
-
+        <br />
+        <br />
         {/* For the movie clicked from movies array display that image src link  */}
         <img src={movies[id]?.poster} />
 
         {/* For the movie clicked from movies array display the description of the film  */}
         <textarea
           type="text"
+          style={{
+            marginRight: "auto",
+            marginLeft: "auto",
+            width: "40%",
+          }}
           defaultValue={description}
           onChange={(e) => setNewDescription(e.target.value)}
         />
