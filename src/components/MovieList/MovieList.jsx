@@ -13,7 +13,8 @@ function MovieList() {
 
   return (
     <main>
-      <h1>MovieList</h1>
+      {/* <h1>MovieList</h1> */}
+      <br />
       <div clssname="container">
         <section className="movies">
           {/* take in every movie from movies and map with id */}

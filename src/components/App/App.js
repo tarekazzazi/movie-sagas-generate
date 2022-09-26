@@ -1,14 +1,15 @@
 import { HashRouter as Router, Route } from "react-router-dom";
-import "./App.css";
 import MovieList from "../MovieList/MovieList";
 import MovieDetail from "../MovieDetail/MovieDetail";
+import EditMovie from "../MovieDetail/EditMovie";
 import MoviePage from "../MoviePage/MoviePage";
 import "./App.css";
+import banner from "../../assets/NowShowing.png";
 function App() {
   return (
     <div className="App">
       <div className="App-header">
-        <h1>The Movies Saga!</h1>
+        <img src={banner}></img>
       </div>
       <Router>
         <Route path="/" exact>
@@ -18,6 +19,9 @@ function App() {
         {/* Details page */}
         <Route path="/movies/:id" exact>
           <MovieDetail />
+        </Route>
+        <Route path="/editMovie/:id" exact>
+          <EditMovie />
         </Route>
         {/* Add Movie page */}
         <Route path="/movieform" exact>
