@@ -6,10 +6,15 @@ import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 function EditMovie() {
   const dispatch = useDispatch();
-
+  // Grabs list of movies from store
+  const movies = useSelector((store) => store.movies);
+  const { id } = useParams();
+  // defines varables
+  let MovieTitle = movies[id]?.title;
+  let description = movies[id]?.description;
   // declare local state
-  const [newTitle, setNewTitle] = useState();
-  const [newDescription, setNewDescription] = useState();
+  const [newTitle, setNewTitle] = useState(MovieTitle);
+  const [newDescription, setNewDescription] = useState(description);
 
   useEffect(() => {
     dispatch({ type: "FETCH_MOVIES" });
@@ -18,15 +23,15 @@ function EditMovie() {
   const updateMovie = () => {
     console.log("AAAAAAAAAAAAA", newTitle);
     console.log("AAAAAAAAAAAAA", newDescription);
+    dispatch({
+      type: "UPDATE_MOVIE",
+      payload: {
+        id: Number(id) + 1,
+        newTitle,
+        newDescription,
+      },
+    });
   };
-
-  // Grabs list of movies from store
-  const movies = useSelector((store) => store.movies);
-  const { id } = useParams();
-
-  // defines varables
-  let MovieTitle = movies[id]?.title;
-  let description = movies[id]?.description;
 
   return (
     <>
