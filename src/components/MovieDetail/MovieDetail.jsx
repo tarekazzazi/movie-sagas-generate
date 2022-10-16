@@ -5,37 +5,25 @@ import "./MovieDetail.css";
 import * as React from "react";
 import { useEffect } from "react";
 import Button from "@mui/material/Button";
+import backgroundImg from "../../assets/plain-dark-blue.jpg";
 
 function MovieDetail() {
+  // Grabs list of movies from store
+  const movies = useSelector((store) => store.movies);
+  const { id } = useParams();
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch({ type: "FETCH_MOVIES" });
   }, []);
 
-  // Grabs list of movies from store
-  const movies = useSelector((store) => store.movies);
-  const { id } = useParams();
-
-  // EDANS WAY
-  /* 
-      const dispatch = useDispatch();
-    const params = useParams();
-
-    useEffect(() => {
-        dispatch({ type: 'FETCH_ACTIVE_MOVIE' });
-    }, []);
-    */
-  //
-  //
-  console.log("In movie detail");
-  // sets movie id to id
-
-  console.log("is movies defined", movies);
-  console.log("is movies defined", id);
-
   return (
-    <>
+    <div
+      id="background"
+      style={{
+        backgroundImage: `url(${backgroundImg})`,
+      }}
+    >
       <div className="container">
         {/* For the movie clicked from movies array display that title  */}
         <h3>{movies[id]?.title}</h3>
@@ -45,13 +33,29 @@ function MovieDetail() {
         <p>{movies[id]?.description}</p>
         {/* added a link to the home page and a material ui button */}
         <Link to={"/"}>
-          <Button variant="text">Go Back</Button>
+          <Button
+            variant="text"
+            sx={{
+              color: "#CCE6F4",
+              fontWeight: "bold",
+            }}
+          >
+            Go Back
+          </Button>
         </Link>
         <Link to={`/editMovie/${id}`}>
-          <Button variant="text">Edit</Button>
+          <Button
+            variant="text"
+            sx={{
+              color: "#CCE6F4",
+              fontWeight: "bold",
+            }}
+          >
+            Edit
+          </Button>
         </Link>
       </div>
-    </>
+    </div>
   );
 }
 

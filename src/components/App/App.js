@@ -4,22 +4,18 @@ import MovieDetail from "../MovieDetail/MovieDetail";
 import EditMovie from "../MovieDetail/EditMovie";
 import MoviePage from "../MoviePage/MoviePage";
 import "./App.css";
-import banner from "../../assets/NowShowing.png";
 function App() {
   return (
     <div className="App">
-      <div className="App-header">
-        <img src={banner}></img>
-      </div>
       <Router>
         <Route path="/" exact>
           <MovieList />
         </Route>
-
-        {/* Details page */}
+        {/* Movie Details page */}
         <Route path="/movies/:id" exact>
           <MovieDetail />
         </Route>
+        {/* Edit Movie page */}
         <Route path="/editMovie/:id" exact>
           <EditMovie />
         </Route>

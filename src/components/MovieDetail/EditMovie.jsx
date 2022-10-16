@@ -4,13 +4,14 @@ import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import Button from "@mui/material/Button";
+
 function EditMovie() {
   const dispatch = useDispatch();
   const history = useHistory();
   // Grabs list of movies from store
   const movies = useSelector((store) => store.movies);
   const { id } = useParams();
-  // defines varables
+  // defines variables
   let MovieTitle = movies[id]?.title;
   let description = movies[id]?.description;
   // declare local state
@@ -22,8 +23,6 @@ function EditMovie() {
   }, []);
 
   const updateMovie = () => {
-    console.log("AAAAAAAAAAAAA", newTitle);
-    console.log("AAAAAAAAAAAAA", newDescription);
     dispatch({
       type: "UPDATE_MOVIE",
       payload: {
@@ -63,9 +62,9 @@ function EditMovie() {
           onChange={(e) => setNewDescription(e.target.value)}
         />
 
-        {/* added a link to the home page and a material ui button */}
+        {/* added a link to the home page */}
 
-        <Link to={"/"}>
+        <Link to={`/movies/${id}`}>
           <Button variant="text">Go Back</Button>
         </Link>
 
