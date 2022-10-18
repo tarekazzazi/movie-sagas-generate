@@ -11,6 +11,7 @@ import createSagaMiddleware from "redux-saga";
 import { takeEvery, put } from "redux-saga/effects";
 import axios from "axios";
 
+// SAGAS
 // Create the rootSaga generator function
 function* rootSaga() {
   yield takeEvery("FETCH_MOVIES", fetchAllMovies);
@@ -56,6 +57,7 @@ function* updateMovie(action) {
 const sagaMiddleware = createSagaMiddleware();
 
 // Used to store movies returned from the server
+// reducers
 const movies = (state = [], action) => {
   switch (action.type) {
     case "SET_MOVIES":
