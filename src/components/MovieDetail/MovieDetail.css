@@ -1,6 +1,17 @@
-
-.container{
-    text-align: center;
+.container {
+  text-align: center;
+  margin: -21px;
+  height: 730px;
+  background-image: ;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+h3 {
+  margin: 0%;
+  padding-top: 5%;
+  padding-bottom: 2%;
 }
 
-
+a:link {
+  text-decoration: none;
+}
