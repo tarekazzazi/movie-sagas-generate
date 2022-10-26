@@ -4,6 +4,8 @@ import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import Button from "@mui/material/Button";
+import backgroundImg from "../../assets/plain-dark-blue.jpg";
+
 
 function EditMovie() {
   const dispatch = useDispatch();
@@ -37,8 +39,9 @@ function EditMovie() {
   };
 
   return (
-    <>
-      <div className="container">
+    
+      <div className="container"
+      >
         {/* For the movie clicked from movies array display that title  */}
         <input
           type="text"
@@ -72,7 +75,7 @@ function EditMovie() {
           Save
         </Button>
       </div>
-    </>
+  
   );
 }
 

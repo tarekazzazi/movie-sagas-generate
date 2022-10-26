@@ -32,6 +32,13 @@ function MovieList() {
         <div clssname="container">
           <section className="movies">
             {/* take in every movie from movies and map with id */}
+            {genres.map((genre, i) => {
+              return (
+                <div key={genre.id}>
+                  <h2> {genre.name}</h2>
+                </div>
+              );
+            })}
             {movies.map((movie, i) => {
               return (
                 <div key={movie.id}>
