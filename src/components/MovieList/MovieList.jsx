@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import backgroundImg from "../../assets/plain-dark-blue.jpg";
@@ -15,12 +15,13 @@ function MovieList() {
   const movies = useSelector((store) => store.movies);
   const genres = useSelector((store) => store.genres);
 
-  console.log(genres);
-
+  console.log();
+  const handleClick = (e) => {
+  console.log(e.target.innerText);
+  };
+ 
   return (
-    <main>
-      {/* <h1>MovieList</h1> */}
-
+<>
       <img src={backgroundImg} className="bg"/>
         <div clssname="container">
           <section className="genres"> 
@@ -28,7 +29,7 @@ function MovieList() {
                 return (
                   <div key={genre.id}>
                     <ul className="genre-links">
-                      <li>{genre.name}</li>
+                      <li onClick={(e) => handleClick(e)}>{genre.name}</li>
                     </ul> 
                   </div>   
                 );
@@ -56,8 +57,7 @@ function MovieList() {
             })}
           </section>
         </div>
-     
-    </main>
+    </>
   );
 }
 

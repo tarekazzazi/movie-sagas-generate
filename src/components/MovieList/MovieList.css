@@ -1,6 +1,4 @@
-.container{
-  position: relative;
-}
+
 .movies {
   margin-top: 5%;
   margin-right: 70%;
@@ -11,8 +9,7 @@
 .genres{
   margin-top: 0%;
   padding: 1em;
-  padding-right: 8%;
-
+  padding-right: 15%;
 }
 
 li{
@@ -25,15 +22,14 @@ li{
   padding: 1em;
   list-style-type: none;
   margin: 0;
- 
-  
   color: aliceblue;
-
 }
+
 .genre-links:hover{
   opacity: 60%;
   cursor: pointer;
 }
+
 #background {
   background-size: cover;
   background-repeat: no-repeat;
