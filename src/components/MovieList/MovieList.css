@@ -1,3 +1,6 @@
+.container{
+  position: relative;
+}
 .movies {
   margin-top: 5%;
   margin-right: 70%;
@@ -11,9 +14,19 @@
   padding-right: 8%;
 
 }
+
+li{
+  display: inline-block;
+}
+
 .genre-links{
+  position: relative;
   float: right;
   padding: 1em;
+  list-style-type: none;
+  margin: 0;
+ 
+  
   color: aliceblue;
 
 }

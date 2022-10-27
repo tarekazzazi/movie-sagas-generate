@@ -27,9 +27,9 @@ function MovieList() {
             {genres.map((genre) => {
                 return (
                   <div key={genre.id}>
-                    <div className="genre-links">
-                      <h3>{genre.name}</h3>
-                    </div> 
+                    <ul className="genre-links">
+                      <li>{genre.name}</li>
+                    </ul> 
                   </div>   
                 );
               })}
@@ -55,7 +55,6 @@ function MovieList() {
               );
             })}
           </section>
-         
         </div>
      
     </main>
