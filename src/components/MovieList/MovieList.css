@@ -1,7 +1,25 @@
 .movies {
+  margin-top: 5%;
   margin-right: 70%;
   display: grid;
   grid: auto auto auto;
+
+}
+.genres{
+  margin-top: 0%;
+  padding: 1em;
+  padding-right: 8%;
+
+}
+.genre-links{
+  float: right;
+  padding: 1em;
+  color: aliceblue;
+
+}
+.genre-links:hover{
+  opacity: 60%;
+  cursor: pointer;
 }
 #background {
   background-size: cover;

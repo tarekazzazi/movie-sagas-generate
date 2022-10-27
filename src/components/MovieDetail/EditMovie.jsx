@@ -40,7 +40,7 @@ function EditMovie() {
 
   return (
     
-      <div className="container"
+      <div className="movie-detail-container"
       >
         {/* For the movie clicked from movies array display that title  */}
         <input
