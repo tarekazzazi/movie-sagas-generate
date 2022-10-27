@@ -17,14 +17,10 @@ function MovieDetail() {
     dispatch({ type: "FETCH_MOVIES" });
   }, []);
 
-  return (
-    <div
-      id="background"
-      style={{
-        backgroundImage: `url(${backgroundImg})`,
-      }}
-    >
-      <div className="container">
+  return ( 
+  <> 
+    <img src={backgroundImg} className="bg" />
+       <div className="movie-detail-container">
         {/* For the movie clicked from movies array display that title  */}
         <h3>{movies[id]?.title}</h3>
         {/* For the movie clicked from movies array display that image src link  */}
@@ -54,8 +50,8 @@ function MovieDetail() {
             Edit
           </Button>
         </Link>
-      </div>
-    </div>
+      </div> 
+  </>
   );
 }
 

@@ -21,30 +21,28 @@ function MovieList() {
     <main>
       {/* <h1>MovieList</h1> */}
 
-      <div
-        id="background"
-        style={{
-          backgroundImage: `url(${backgroundImg})`,
-          height: "100%",
-        }}
-      >
-        <br />
+      <img src={backgroundImg} className="bg"/>
         <div clssname="container">
+          <section className="genres"> 
+            {genres.map((genre) => {
+                return (
+                  <div key={genre.id}>
+                    <div className="genre-links">
+                      <h3>{genre.name}</h3>
+                    </div> 
+                  </div>   
+                );
+              })}
+          </section>
+          <br />
+          <br />
           <section className="movies">
             {/* take in every movie from movies and map with id */}
-            {genres.map((genre, i) => {
-              return (
-                <div key={genre.id}>
-                  <h2> {genre.name}</h2>
-                </div>
-              );
-            })}
             {movies.map((movie, i) => {
               return (
                 <div key={movie.id}>
                   <div className="textbox">
                     <h2>{movie.title}</h2>
-
                     <p>{movie.description}</p>
                   </div>
                   <div className="card">
@@ -57,8 +55,9 @@ function MovieList() {
               );
             })}
           </section>
+         
         </div>
-      </div>
+     
     </main>
   );
 }
