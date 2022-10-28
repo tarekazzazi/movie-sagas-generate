@@ -15,38 +15,7 @@ router.get("/", (req, res) => {
       res.sendStatus(500);
     });
 });
-// EDANS WAY
-//GET /api/movie/:id
-// return a single movie
 
-/*
-route.get(/:id , (re,res) => {
-  console.log(${req.params.id})
-  res.send('id')
-
-  const sqlQuery = `
-  SELECT * 
-  FROM movies
-  WHERE id = $1`;
-
-  const sqlParams = [req.params.id];
-
-  pool.query(sqlQuery,sqlParams)
-  .then((dbRes) => {
-    log(dbRes.rows[0]);
-    if (dbRes === 0 ){
-      res.sendStatus(404);
-      return;
-    }
-    res.send(dbRes.rows[0]);
-  })
-  .catch((err) => {
-    log (`uh oh there is a error ${err}`);
-  })
-}
-)
-
-*/
 router.put("/:id", (req, res) => {
   console.log("req.boy is", req.body);
   const updateMovie = `
