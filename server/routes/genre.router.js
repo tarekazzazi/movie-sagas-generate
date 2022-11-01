@@ -17,18 +17,29 @@ const pool = require("../modules/pool");
 //     });
 // });
 
-router.get("/", (req, res) => {
+router.get("/:id", (req, res) => {
   // needs to send over name of genre clicked
   console.log(req.params);
   const genreQuery = `
-  SELECT * FROM "movies"
+SELECT * FROM "movies"
 JOIN "movies_genres"
   ON  "movies_genres"."movie_id" =  "movies"."id"
 JOIN "genres" 
   ON "movies_genres"."genre_id"  = "genres"."id"
-WHERE "genres"."name" = $1;
+WHERE "movies"."id" = $1;
   `;
-  const genreparams = [];
+  const genreparams = [req.params.id];
+
+  pool
+    .query(genreQuery, genreparams)
+    .then((result) => {
+      console.log(result.rows);
+      res.send(result.rows);
+    })
+    .catch((err) => {
+      console.log("ERROR: Get all genres", err);
+      res.sendStatus(500);
+    });
 });
 
 module.exports = router;

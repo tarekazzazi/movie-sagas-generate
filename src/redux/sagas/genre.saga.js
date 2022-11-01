@@ -1,26 +1,17 @@
 import { put, takeLatest } from "redux-saga/effects";
 import axios from "axios";
 
-function* fetchAllGenres() {
-  // get all genres from the DB
-  try {
-    const genres = yield axios.get("/api/genre");
-    yield put({
-      type: "SET_GENRES",
-      payload: genres.data,
-    });
-  } catch {
-    console.log("get all error");
-  }
-}
-
 function* fetchMovieByGenre(action) {
   console.log("hello", action.payload);
   try {
-    const genres = yield axios.get(`/api/genre/`, action.payload);
+    const res = yield axios.get(
+      `/api/genre/${action.payload.id}`,
+      action.payload
+    );
+    console.log("GOING IN STORE >>>>", res.data);
     yield put({
       type: "SET_MOVIES_GENRE",
-      payload: genres.data,
+      payload: res.data,
     });
   } catch {
     console.log("get all error");

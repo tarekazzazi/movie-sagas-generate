@@ -10,15 +10,15 @@ function GenresList() {
     // dispatch({ type: "FETCH_GENRES" });
     dispatch({
       type: "FETCH_MOVIES_BY_GENRE",
-      payload: { tags: tags },
+      payload: tags,
     });
   }, []);
 
   const movies = useSelector((store) => store.movies);
   const genres = useSelector((store) => store.genres);
 
-  let tags = movies[id]?.title;
-  console.log(tags);
+  let tags = movies[id];
+  // console.log(tags);
 
   return (
     <>
@@ -27,7 +27,7 @@ function GenresList() {
           return (
             <div key={genre.id}>
               <ul className="genre-links">
-                <li>{genre.name}</li>
+                <li> {genre.name}</li>
               </ul>
             </div>
           );
