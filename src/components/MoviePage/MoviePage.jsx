@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import "./MoviePage.css";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import "./MoviePage.css";
+
 function MovieForm() {
   const dispatch = useDispatch();
   const genres = useSelector((store) => store.genres);

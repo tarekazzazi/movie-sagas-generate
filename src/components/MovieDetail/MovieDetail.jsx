@@ -6,6 +6,7 @@ import * as React from "react";
 import { useEffect } from "react";
 import Button from "@mui/material/Button";
 import backgroundImg from "../../assets/plain-dark-blue.jpg";
+import GenreList from "../GenreList/GenreList";
 
 function MovieDetail() {
   // Grabs list of movies from store
@@ -13,14 +14,19 @@ function MovieDetail() {
   const { id } = useParams();
   const dispatch = useDispatch();
 
+  // const MoviesSortedByGenre = () => {};
+
   useEffect(() => {
     dispatch({ type: "FETCH_MOVIES" });
   }, []);
 
-  return ( 
-  <> 
-    <img src={backgroundImg} className="bg" />
-       <div className="movie-detail-container">
+  return (
+    <>
+      <img src={backgroundImg} className="bg" />
+
+      <GenreList />
+
+      <div className="movie-detail-container">
         {/* For the movie clicked from movies array display that title  */}
         <h3>{movies[id]?.title}</h3>
         {/* For the movie clicked from movies array display that image src link  */}
@@ -50,8 +56,8 @@ function MovieDetail() {
             Edit
           </Button>
         </Link>
-      </div> 
-  </>
+      </div>
+    </>
   );
 }
 
